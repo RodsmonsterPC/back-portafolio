@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import connectDB from './db.js'
 import projectRoutes from './routes/projects.js'
 import authRoutes from './routes/auth.js'
+import skillRoutes from './routes/skills.js'
 
 dotenv.config()
 
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: true }))
 /* ─── Rutas ─── */
 app.use('/api/auth', authRoutes)
 app.use('/api/projects', projectRoutes)
+app.use('/api/skills', skillRoutes)
 
 /* ─── Health check ─── */
 app.get('/api/health', (_req, res) => {
